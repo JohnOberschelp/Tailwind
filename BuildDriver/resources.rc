@@ -1,0 +1,24 @@
+
+#include "windows.h"
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+VS_VERSION_INFO VERSIONINFO
+    FILETYPE VFT_DRV
+    FILESUBTYPE VFT2_DRV_SYSTEM
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName",      "John Oberschelp"
+            VALUE "FileDescription",  "Tailwind File System Driver"
+            VALUE "InternalName",     "tailwind.sys"
+            VALUE "LegalCopyright",   "Copyright © 2024 John Oberschelp"
+            VALUE "OriginalFilename", "tailwind.sys"
+            VALUE "ProductName",      "tailwind"
+            VALUE "FileVersion",      "2.0.2.0"
+            VALUE "ProductVersion",   "2.0.2.0"
+        END
+    END
+END

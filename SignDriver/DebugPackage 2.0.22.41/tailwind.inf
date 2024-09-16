@@ -1,0 +1,62 @@
+;;;
+;;; tailwind.inf
+;;;
+
+
+[Version]
+Signature   = "$Windows NT$"
+Provider    = %InfProvider%
+DriverVer   = 04/03/2024,2.0.22.41
+CatalogFile = tailwind.cat
+Class       = Volume
+ClassGuid   = {71a27cdd-812a-11d0-bec7-08002be2092f}
+PnpLockDown = 0
+
+
+[DestinationDirs]
+DefaultDestDir    = 12
+tailwind.DriverFiles = 12
+
+
+[SourceDisksNames]
+1 = %Disk1%
+
+
+[SourceDisksFiles]
+tailwind.sys = 1
+
+
+[DefaultInstall.NTAMD64]
+OptionDesc = %ServiceDesc%
+CopyFiles = tailwind.DriverFiles
+[DefaultInstall.NTX86]
+OptionDesc = %ServiceDesc%
+CopyFiles = tailwind.DriverFiles
+
+
+[tailwind.DriverFiles]
+tailwind.sys
+
+
+[DefaultInstall.NTAMD64.Services]
+AddService = %ServiceName%,,tailwind.Service
+[DefaultInstall.NTX86.Services]
+AddService = %ServiceName%,,tailwind.Service
+
+
+[tailwind.Service]
+DisplayName    = %ServiceName%
+Description    = %ServiceDesc%
+ServiceBinary  = %12%\tailwind.sys
+ServiceType    = 2 ;    SERVICE_FILE_SYSTEM_DRIVER
+StartType      = 3 ; SERVICE_DEMAND_START  was  1 ;    SERVICE_SYSTEM_START
+ErrorControl   = 1 ;    SERVICE_ERROR_NORMAL
+LoadOrderGroup = "File System"
+
+
+[Strings]
+InfProvider = "John Oberschelp"
+ServiceDesc = "Tailwind File System Driver"
+ServiceName = "tailwind"
+Disk1       = "Tailwind File System Driver CD"
+

@@ -1,0 +1,6 @@
+.echo hi-----------------------------------------
+.srcpath+ "C:\Users\jober\FileSystems\tailwind\working\Driver"
+.sympath "C:\Users\jober\FileSystems\tailwind\working\Driver\x64\Debug"
+.symfix+ "C:\Symbols"
+.echo bye-------------------------------------------
+.reload
