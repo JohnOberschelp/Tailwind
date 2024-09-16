@@ -66,7 +66,7 @@ double-click the exe, wait for the home page to draw.
 | 2. From a reboot, relaunch VLC                 | 8        | 38    | 33   |
 | 3. Drop FF installer, run installer, launch FF | 44       | 198   | 158  |
 
-![](.\2024-07-23_graphs.png)
+![](./2024-07-23_graphs.png)
 
 ___
 
