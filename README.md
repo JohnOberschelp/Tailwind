@@ -1,7 +1,7 @@
 # Tailwind File System
 
 TL;DR Tailwind is a pre-alpha, very lean file system driver, currently Windows
-only. Although it is in crude shape, some applications run under Tailwind three times as fast as when run under either exFAT or NTFS.
+only. Although it is in crude shape, it can run major applications, and some applications run over three times as fast as when run under either exFAT or NTFS.
 
 ### Why a New Filesystem?
 
