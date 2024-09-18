@@ -1,11 +1,9 @@
 # Tailwind File System
 
-**2024-09-01**
-
 TL;DR Tailwind is a pre-alpha, very lean file system driver, currently Windows
 only. Although it is in crude shape, some applications run under Tailwind three times as fast as when run under either exFAT or NTFS.
 
-##### Why a New Filesystem?
+### Why a New Filesystem?
 
 Tailwind is a pet project of mine, a Windows File System Driver. It has
 been in the works for years, and, as of 2024, is still very crude, not
@@ -19,31 +17,27 @@ development is very complicated and hurts my head (and many other people's heads
 
 So, since your file system was designed, your computer has become, crudely, 300 times faster, gained 2000 times more memory, and 1000 times more storage that is 1000 times faster. And, so, for example, I did not worry about consuming hundreds of MB of RAM, where as computers when NTFS was designed didn't have nearly that much memory in total!
 
-___
+## Tailwind vs exFAT vs NTFS: a Speed Comparison
 
-### Tailwind vs exFAT vs NTFS: a Speed Comparison
+### Target Software Used
 
-**2024-07-23**
+- **Tailwind**: Tailwind version 2.0.21.20, built on 2024-07-22
 
-#### Target Software Used
+- **VLC**: VLCPortable_3.0.18.paf.exe
 
-**Tailwind**: Tailwind version 2.0.21.20, built on 2024-07-22
+- **FF**: FirefoxPortable_91.0.1_English.paf.exe
 
-**VLC**: VLCPortable_3.0.18.paf.exe
+- **BBB**: bbb.webm (A 5 second clip of Big Buck Bunny, 902KB)
 
-**FF**: FirefoxPortable_91.0.1_English.paf.exe
+- **OS**: Windows 10 Pro 22H2
 
-**BBB**: bbb.webm (A 5 second clip of Big Buck Bunny, 902KB)
+### Target Hardware Used
 
-**OS**: Windows 10 Pro 22H2
+- **Computer**: Dell Studio 1569 laptop, M430 Core i5 CPU at 2.27 GHz, 8 GB RAM, USB2.0
 
-#### Target Hardware Used
+- **Drive**: Micro Center USB3.1 64GB thumb drive
 
-**Computer**: Dell Studio 1569 laptop, M430 Core i5 CPU at 2.27 GHz, 8 GB RAM, USB2.0
-
-**Drive**: Micro Center USB3.1 64GB thumb drive
-
-##### Tests
+### Tests
 
 Three tests were timed using each of three file systems, Tailwind,
 exFAT, and NTFS. The tests were convenient, as they are the tests used
@@ -68,13 +62,11 @@ double-click the exe, wait for the home page to draw.
 
 ![](./2024-07-23_graphs.png)
 
-___
-
-##### Target Audience
+### Target Audience
 
 I have satisfied myself that there is a lot of room for play and innovation, and I am ready to be done with it. But I don't want to throw it away, so I am putting it in a repository. Maybe it can be improved to be a capable file system, or maybe you want to try something with file systems, and don't want to start from scratch.  So here you go\...
 
-##### Quick Start
+### Quick Start
 
 - Set up a Windows driver development environment with a Client computer and a Target computer.  
   See "Steps to Set Up the Target Machine.md" and "Steps to Set Up the Client Machine.odt" for more detail.
@@ -86,7 +78,7 @@ I have satisfied myself that there is a lot of room for play and innovation, and
 - Start up WinDbg on the Client computer, if you wish.
 - As admin, run "sc_start_tailwind_ADMIN.bat"
 
-##### There Are Many Things That Need Work
+### There Are Many Things That Need Work
 
 - Need to use per-volume values instead of globals.
 - Need to add appropriate checks for passed parameters.
@@ -97,7 +89,7 @@ I have satisfied myself that there is a lot of room for play and innovation, and
 - The volume formatter basically just stomps on the first sector in such a way that no driver but ours will recognize it, and that we will recognize that it has no data on it yet. If I were smart, I would know the proper way to do this.
   (And, this is not an exhaustive list; just the list that I can think of just now, so yeah.)
 
-##### Project Folders
+### Project Folders
 
 - **BuildDriver**: Builds tailwind.sys, the driver.
 - **BuildChatUtility**: Builds Chat.exe, a utility that communicates with the driver.
