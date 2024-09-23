@@ -1,7 +1,11 @@
 # Tailwind File System
 
-TL;DR Tailwind is a pre-alpha, very lean file system driver, currently Windows
-only. Although it is in crude shape, it can run major applications, and some tasks run over three times as fast as when run under either exFAT or NTFS.
+Tailwind is a pre-alpha, very lean file system driver, currently Windows
+only. Although it is in crude shape, it can be used to run major applications, and tasks run over **three times as fast** as when run under either exFAT or NTFS.
+
+(See test descriptions below. Times in seconds.)
+
+![](./2024-07-23_graphs.png)
 
 ### Why a New Filesystem?
 
@@ -59,8 +63,6 @@ double-click the exe, wait for the home page to draw.
 | 1. Install, launch VLC, play BBB, and exit     | 10       | 92    | 89   |
 | 2. From a reboot, relaunch VLC                 | 8        | 38    | 33   |
 | 3. Drop FF installer, run installer, launch FF | 44       | 198   | 158  |
-
-![](./2024-07-23_graphs.png)
 
 ### Target Audience
 
